@@ -1,0 +1,713 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sso_scim/">
+      
+      
+        <link rel="next" href="../global_connections/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Alerting & Monitoring - Workato Workspace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alerting-monitoring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Workato Workspace Documentation" class="md-header__button md-logo" aria-label="Workato Workspace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workato Workspace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Alerting & Monitoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/your-repo/workato-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Workato Workspace Documentation" class="md-nav__button md-logo" aria-label="Workato Workspace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Workato Workspace Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/your-repo/workato-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workspace_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workspace Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sso_scim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSO & SCIM Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Alerting & Monitoring
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Alerting & Monitoring
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-obtain-api-key-from-the-new-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Obtain API Key from the New Workspace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Obtain API Key from the New Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-generate-an-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Generate an API Key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-register-the-workspace-in-hq-monitoring-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Register the Workspace in HQ Monitoring Recipes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Register the Workspace in HQ Monitoring Recipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-register-in-hq-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Register in HQ Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-set-up-slack-alerts-for-automation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Set Up Slack Alerts for Automation Failures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Set Up Slack Alerts for Automation Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-configure-slack-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Configure Slack Alerts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-test-and-validate-monitoring-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Test and Validate Monitoring Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Test and Validate Monitoring Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues &amp; Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Final Verification
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global_connections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Connections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shared_templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shared Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Governance & Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="alerting-monitoring">Alerting &amp; Monitoring<a class="headerlink" href="#alerting-monitoring" title="Permanent link">&para;</a></h1>
+<p>This section covers <strong>how to configure real-time alerts and monitoring</strong> for Workato workspaces to ensure automation failures are detected and addressed promptly.</p>
+<p>By implementing a <strong>centralized monitoring strategy</strong>, teams can:
+- <strong>Receive real-time alerts</strong> when automations fail.
+- <strong>Proactively fix issues</strong> before they impact operations.
+- <strong>Track automation performance</strong> using monitoring dashboards.
+- <strong>Ensure compliance</strong> with logging and audit requirements.</p>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Effective alerting and monitoring ensure that Workato recipes operate <strong>reliably and efficiently</strong>. This setup leverages:
+- <strong>API-based monitoring</strong> to track automation performance.
+- <strong>Slack notifications</strong> for instant failure alerts.
+- <strong>Centralized monitoring recipes in the HQ workspace</strong>.</p>
+<p>This guide will walk you through <strong>configuring monitoring</strong>, setting up Slack alerts, and validating the system.</p>
+<hr />
+<h2 id="step-1-obtain-api-key-from-the-new-workspace">Step 1: Obtain API Key from the New Workspace<a class="headerlink" href="#step-1-obtain-api-key-from-the-new-workspace" title="Permanent link">&para;</a></h2>
+<p>Each workspace must be <strong>registered in the HQ monitoring system</strong> via an API key.</p>
+<h3 id="steps-to-generate-an-api-key"><strong>Steps to Generate an API Key</strong><a class="headerlink" href="#steps-to-generate-an-api-key" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Log in</strong> to the Workato workspace.</li>
+<li>Navigate to:  </li>
+<li><code>Settings</code> → <code>API Access</code>.</li>
+<li>Click <strong>Generate API Key</strong>.</li>
+<li><strong>Copy the API key</strong> and store it securely (this will be used in the HQ monitoring setup).</li>
+</ol>
+<p><strong>Example Screenshot: Generating API Key</strong></p>
+<p align="center">
+  <img src="images/generate-api-key.png" width="600"/>
+</p>
+
+<hr />
+<h2 id="step-2-register-the-workspace-in-hq-monitoring-recipes">Step 2: Register the Workspace in HQ Monitoring Recipes<a class="headerlink" href="#step-2-register-the-workspace-in-hq-monitoring-recipes" title="Permanent link">&para;</a></h2>
+<p>Once the API key is generated, register the workspace <strong>in the HQ Monitoring system</strong>.</p>
+<h3 id="steps-to-register-in-hq-monitoring"><strong>Steps to Register in HQ Monitoring</strong><a class="headerlink" href="#steps-to-register-in-hq-monitoring" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Log in to the Workato HQ workspace</strong>.</li>
+<li>Open the <strong>HQ Monitoring Recipe</strong>.</li>
+<li>Add the <strong>new workspace’s API key</strong> to the list of monitored workspaces.</li>
+<li>Save and <strong>deploy the monitoring recipe</strong>.</li>
+</ol>
+<p>This ensures that the new workspace is <strong>continuously monitored</strong> for failures.</p>
+<hr />
+<h2 id="step-3-set-up-slack-alerts-for-automation-failures">Step 3: Set Up Slack Alerts for Automation Failures<a class="headerlink" href="#step-3-set-up-slack-alerts-for-automation-failures" title="Permanent link">&para;</a></h2>
+<p>Slack notifications allow <strong>teams to receive instant alerts</strong> when a recipe fails.</p>
+<h3 id="steps-to-configure-slack-alerts"><strong>Steps to Configure Slack Alerts</strong><a class="headerlink" href="#steps-to-configure-slack-alerts" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ensure a <strong>dedicated Slack channel</strong> exists for the department (e.g., <code>#workato-finance</code> or <code>#workato-security</code>).</li>
+<li>Open the <strong>Workato HQ Monitoring Recipe</strong>.</li>
+<li>Configure the <strong>Slack connection</strong>:</li>
+<li><strong>Webhook URL</strong>: Retrieve from the Slack integration settings.</li>
+<li><strong>Channel Mapping</strong>: Map Workato workspace alerts to the correct Slack channel.</li>
+<li>Test the alerting recipe by <strong>triggering a controlled failure</strong>.</li>
+</ol>
+<p><strong>Example Screenshot: Configuring Slack Alerts</strong></p>
+<p align="center">
+  <img src="images/slack-alert-setup.png" width="600"/>
+</p>
+
+<hr />
+<h2 id="step-4-test-and-validate-monitoring-setup">Step 4: Test and Validate Monitoring Setup<a class="headerlink" href="#step-4-test-and-validate-monitoring-setup" title="Permanent link">&para;</a></h2>
+<p>Before finalizing, perform <strong>end-to-end testing</strong> to ensure monitoring and alerts function correctly.</p>
+<h3 id="validation-steps"><strong>Validation Steps</strong><a class="headerlink" href="#validation-steps" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Trigger a Recipe Failure</strong>
+- Run a <strong>test automation</strong> that is designed to fail.
+- Verify that the failure <strong>triggers a Slack alert</strong>.</p>
+<p>✅ <strong>Check API Monitoring Logs</strong>
+- Go to <strong>HQ Monitoring Logs</strong>.
+- Confirm that failure logs <strong>are being recorded</strong>.</p>
+<p>✅ <strong>Review Alert Delivery</strong>
+- Ensure alerts <strong>are sent to the correct Slack channel</strong>.
+- Check that <strong>responsible team members are notified</strong>.</p>
+<hr />
+<h2 id="common-issues-troubleshooting">Common Issues &amp; Troubleshooting<a class="headerlink" href="#common-issues-troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Issue</strong></th>
+<th><strong>Possible Cause</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No alerts are sent</strong></td>
+<td>API key not registered in HQ</td>
+<td>Verify that the workspace's API key is added to monitoring recipes.</td>
+</tr>
+<tr>
+<td><strong>Slack alerts not received</strong></td>
+<td>Incorrect webhook URL</td>
+<td>Double-check the Slack integration settings in Workato.</td>
+</tr>
+<tr>
+<td><strong>Monitoring logs missing failures</strong></td>
+<td>Recipe is not configured correctly</td>
+<td>Review recipe triggers and logging conditions.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="final-verification">✅ Final Verification<a class="headerlink" href="#final-verification" title="Permanent link">&para;</a></h2>
+<p>To ensure that <strong>monitoring and alerting</strong> are fully functional:
+1. <strong>Verify that all new workspaces are registered in HQ monitoring</strong>.
+2. <strong>Test Slack alerts</strong> by triggering multiple failure scenarios.
+3. <strong>Monitor logging consistency</strong> to ensure accurate issue tracking.</p>
+<p>Once these tests are complete, <strong>the alerting and monitoring system is successfully configured</strong>.</p>
+<p>For further assistance, refer to <strong>Workato’s Monitoring Best Practices</strong> or contact the <strong>Automation Team</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate", "search.suggest", "navigation.instant", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
