@@ -1,0 +1,32 @@
+site_name: Workato Workspace Documentation
+repo_url: https://github.com/your-repo/workato-docs
+nav:
+  - Home: index.md
+  - Workspace Setup: workspace_setup.md
+  - SSO & SCIM Configuration: sso_scim.md
+  - Alerting & Monitoring: alerting_monitoring.md
+  - Global Connections: global_connections.md
+  - Shared Templates: shared_templates.md
+  - Governance & Best Practices: governance.md
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: light blue
+  features:
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - navigation.instant
+    - navigation.tracking
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
